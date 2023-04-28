@@ -12,7 +12,7 @@ hardcoded_farm_locations = [
 ]
 
 
-def haversine(input_one, input_two):
+def haversine(input_one, input_two):# CREDIT: https://stackoverflow.com/questions/15736995/how-can-i-quickly-estimate-the-distance-between-two-latitude-longitude-points
     """
     Calculate the great circle distance between two points 
     on the earth (specified in decimal degrees)
@@ -39,13 +39,8 @@ def calculate_distance_plant_to_farms(plant: tuple, farms: list[tuple]):
     closest_distance = 0.0
     best_farm = None
     for farm in farms:
-        print(f"TEST: {farms[farm]}")
-        print(type(farm))
-        print(type(plant))
-        print(farm)
-        print(plant)
         km_distance = haversine(input_one=plant, input_two=farm)
-        print(f'DISTANCE TO PLANT: {km_distance}, PLANT: {plant}, FARM: {farm}')
+        print(f'DISTANCE TO PLANT: {km_distance}, PLANT: {plant}, FARM: {farm}, AVAILABLE CROPS ON FARM:{farms[farm]}')
         if (km_distance < closest_distance or closest_distance == 0.0) and plant[2] in farms[farm]:
             closest_distance = km_distance
             best_farm = farm
@@ -63,7 +58,7 @@ def coalesce_farm_crops(farms: list[str]):
     farm_crops = {}
     for farm in farms:
         farm = farm.split()
-        if (farm[0], farm[1]) in farm_crops.keys():
+        if (float(farm[0]), float(farm[1])) in farm_crops.keys():
             farm_crops[(float(farm[0]), float(farm[1]))].append(farm[2])
         else:
             farm_crops[(float(farm[0]), float(farm[1]))] = [farm[2]]
@@ -75,10 +70,9 @@ def main():
     plants = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/solution/plants.txt')
     new_farms = coalesce_farm_crops(farms=farms)
     new_plants = [(float(plant.split()[0]), float(plant.split()[1]), plant.split()[2]) for plant in plants]
-
     for plant in new_plants:
         distance_to_farm, closest_farm = calculate_distance_plant_to_farms(plant=plant, farms=new_farms)
-        print(f'BEST FARM FOR PLANT: {plant}, DISTANCE TO FARM: {distance_to_farm}, CLOSEST FARM: {closest_farm}')
+        print(f'BEST FARM FOR PLANT: {plant}, DISTANCE TO FARM: {distance_to_farm}, CLOSEST FARM: {closest_farm}, CLOSEST FARMS CROPS: {new_farms[closest_farm]}')
 
 
 if __name__ == "__main__":
