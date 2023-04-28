@@ -32,7 +32,8 @@ There will be 2 text files:
 
 
 # Output Format
-     Latitude | Longitude | Farm_Name
-     ---|----------|-----------|---
+     Plant LatLong | Closest Farm Lat Long | DistanceBetween | Available Crops
+     --------|----------|-----------|--------
+     38.513253, -90.14531 | 38.50821, -90.142351 | 0.6170355801223573KM | ['corn', 'cotton']
      
 

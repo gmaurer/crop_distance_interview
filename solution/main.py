@@ -66,8 +66,8 @@ def coalesce_farm_crops(farms: list[str]):
 
 
 def main():
-    farms = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/solution/farms.txt')
-    plants = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/solution/plants.txt')
+    farms = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/farms.txt')
+    plants = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/plants.txt')
     new_farms = coalesce_farm_crops(farms=farms)
     new_plants = [(float(plant.split()[0]), float(plant.split()[1]), plant.split()[2]) for plant in plants]
     for plant in new_plants:
