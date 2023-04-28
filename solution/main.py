@@ -40,7 +40,7 @@ def calculate_distance_plant_to_farms(plant: tuple, farms: list[tuple]):
     best_farm = None
     for farm in farms:
         km_distance = haversine(input_one=plant, input_two=farm)
-        print(f'DISTANCE TO PLANT: {km_distance}, PLANT: {plant}, FARM: {farm}, AVAILABLE CROPS ON FARM:{farms[farm]}')
+        print(f'DISTANCE TO PLANT: {km_distance}KM, PLANT: {plant}, FARM: {farm}, AVAILABLE CROPS ON FARM:{farms[farm]}')
         if (km_distance < closest_distance or closest_distance == 0.0) and plant[2] in farms[farm]:
             closest_distance = km_distance
             best_farm = farm
@@ -72,7 +72,7 @@ def main():
     new_plants = [(float(plant.split()[0]), float(plant.split()[1]), plant.split()[2]) for plant in plants]
     for plant in new_plants:
         distance_to_farm, closest_farm = calculate_distance_plant_to_farms(plant=plant, farms=new_farms)
-        print(f'BEST FARM FOR PLANT: {plant}, DISTANCE TO FARM: {distance_to_farm}, CLOSEST FARM: {closest_farm}, CLOSEST FARMS CROPS: {new_farms[closest_farm]}')
+        print(f'BEST FARM FOR PLANT: {plant}, DISTANCE TO FARM: {distance_to_farm}KM, CLOSEST FARM: {closest_farm}, CLOSEST FARMS CROPS: {new_farms[closest_farm]}')
 
 
 if __name__ == "__main__":
