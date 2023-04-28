@@ -12,27 +12,27 @@ There will be 2 text files:
 # Sample Input
 **Plant Table**
 
-     ID | Latitude | Longitude | crop | Farm_Name
-        ---|----------|-----------|----------- | ---
-    1231 | 38.513253 | -90.145310 | corn | 
-    1232 | 38.512092 | -90.143185 | soy | 
-    1233 | 38.516561 | -90.138432 | wheat |
+     Latitude | Longitude | crop 
+     ---|----------|-----------|----------- 
+     38.513253 | -90.145310 | corn 
+     38.512092 | -90.143185 | soy 
+     38.516561 | -90.138432 | wheat
 
 **Farm Table**
  
-    Farm_Name | Latitude | Longitude | crop 
-        ---|----------|-----------|----------- | ---
-    ABC Farm | 38.520671 | -90.157317 | corn
-    ABC Farm | 38.520671 | -90.157317 | canola
-    ABC Farm | 38.520671 | -90.157317 | wheat
-    XYZ Farm | 38.508210 | -90.142351 | corn
-    XYZ Farm | 38.508210 | -90.142351 | cotton
-    123 Farm | 38.515713 | -90.115004 | soybean
-    123 Farm | 38.515713 | -90.115004 | wheat
+     Latitude | Longitude | crop 
+     ----------|-----------|----------- | ---
+     38.520671 | -90.157317 | corn
+     38.520671 | -90.157317 | canola
+     38.520671 | -90.157317 | wheat
+     38.508210 | -90.142351 | corn
+     38.508210 | -90.142351 | cotton
+     38.515713 | -90.115004 | soybean
+     38.515713 | -90.115004 | wheat
 
 
 # Output Format
-     ID | Latitude | Longitude | Farm_Name
-        ---|----------|-----------|---
-    1234 | 
+     Latitude | Longitude | Farm_Name
+     ---|----------|-----------|---
+     
 
