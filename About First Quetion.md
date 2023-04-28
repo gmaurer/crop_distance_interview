@@ -20,11 +20,15 @@ There will be 2 text files:
 
 **Farm Table**
  
-    Farm_Name | Latitude | Longitude
-        ---|----------|-----------|---
-    ABC Farm | 38.520671 | -90.157317
-    XYZ Farm | 38.508210 | -90.142351
-    123 Farm | 38.515713 | -90.115004
+    Farm_Name | Latitude | Longitude | crop 
+        ---|----------|-----------|----------- | ---
+    ABC Farm | 38.520671 | -90.157317 | corn
+    ABC Farm | 38.520671 | -90.157317 | canola
+    ABC Farm | 38.520671 | -90.157317 | wheat
+    XYZ Farm | 38.508210 | -90.142351 | corn
+    XYZ Farm | 38.508210 | -90.142351 | cotton
+    123 Farm | 38.515713 | -90.115004 | soybean
+    123 Farm | 38.515713 | -90.115004 | wheat
 
 
 # Output Format
