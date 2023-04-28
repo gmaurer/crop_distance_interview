@@ -1,0 +1,4 @@
+longitude latitude crop
+38.513253 -90.145310 corn
+38.512092 -90.143185 soybean
+38.516561 -90.138432 wheat

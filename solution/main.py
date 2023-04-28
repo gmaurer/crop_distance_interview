@@ -11,14 +11,15 @@ hardcoded_farm_locations = [
     (38.515713, -90.115004)
 ]
 
-def haversine(plant, farm):
+
+def haversine(input_one, input_two):
     """
     Calculate the great circle distance between two points 
     on the earth (specified in decimal degrees)
     """
 
-    lon1, lat1 = plant[0], plant[1]
-    lon2, lat2 = farm[0], farm[1]
+    lon1, lat1 = input_one[1], input_one[0]
+    lon2, lat2 = input_two[1], input_two[0]
     # convert decimal degrees to radians 
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
     # haversine formula 
@@ -31,27 +32,53 @@ def haversine(plant, farm):
     return km
 
 
-def calculate_distance(plant: tuple, farms: list[tuple]):
+def calculate_distance_plant_to_farms(plant: tuple, farms: list[tuple]):
     """
     Loops through all farms given to find closest farm to provided plant
     """
     closest_distance = 0.0
     best_farm = None
     for farm in farms:
-        km_distance = haversine(plant=plant, farm=farm)
+        print(f"TEST: {farms[farm]}")
+        print(type(farm))
+        print(type(plant))
+        print(farm)
+        print(plant)
+        km_distance = haversine(input_one=plant, input_two=farm)
         print(f'DISTANCE TO PLANT: {km_distance}, PLANT: {plant}, FARM: {farm}')
-        if km_distance < closest_distance or closest_distance == 0.0:
+        if (km_distance < closest_distance or closest_distance == 0.0) and plant[2] in farms[farm]:
             closest_distance = km_distance
             best_farm = farm
             
     return(closest_distance, best_farm)
 
+def read_in_file(file_location: str):
+    info = []
+    with open(file_location, 'r') as file:
+        info = file.read().splitlines()
+    info.pop(0)
+    return info
+
+def coalesce_farm_crops(farms: list[str]):
+    farm_crops = {}
+    for farm in farms:
+        farm = farm.split()
+        if (farm[0], farm[1]) in farm_crops.keys():
+            farm_crops[(float(farm[0]), float(farm[1]))].append(farm[2])
+        else:
+            farm_crops[(float(farm[0]), float(farm[1]))] = [farm[2]]
+    return farm_crops
+
+
 def main():
+    farms = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/solution/farms.txt')
+    plants = read_in_file('/Users/gkvrg/Documents/projects/crop_distance_interview/solution/plants.txt')
+    new_farms = coalesce_farm_crops(farms=farms)
+    new_plants = [(float(plant.split()[0]), float(plant.split()[1]), plant.split()[2]) for plant in plants]
 
-    for plant in hardcoded_plant_locations:
-        distance_to_farm, closest_farm = calculate_distance(plant=plant, farms=hardcoded_farm_locations)
+    for plant in new_plants:
+        distance_to_farm, closest_farm = calculate_distance_plant_to_farms(plant=plant, farms=new_farms)
         print(f'BEST FARM FOR PLANT: {plant}, DISTANCE TO FARM: {distance_to_farm}, CLOSEST FARM: {closest_farm}')
-
 
 
 if __name__ == "__main__":
