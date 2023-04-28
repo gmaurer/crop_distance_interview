@@ -1,13 +1,13 @@
 # The First Problem
 
-The situation is that a user reached out to notify us that there are several plant records missing farm data. Data about the plants themselves were collected in the field, but information about the farms--like the farm name--was not collected. The user provided a table of the plant records that are missing the farm name. The plant table includes coordinates of the plants. The user wants a table that has the plant data with the farm name included.
+The situation is that a user reached out to notify us that there are several plant records missing farm data. Data about the plants themselves were collected in the field, but information about the distance to the correct farms was not collected.  The plant table includes coordinates of the plants. 
 
-We have a farm table that includes the coordinates of the farms. Create a table that displays the plant data and the farm name of the closest farm.
+We have a farm table that includes the coordinates of the farms and the supported crops. Create a table that displays the plant data and the farm name of the closest farm that supports the plant type.
 
 # Input data
 There will be 2 text files:
   1. Plant table - This is the plant data collected in the field, including coordinates. 
-  2. Farm table - This is the farm data, including farm name and coordinates
+  2. Farm table - This is the farm data, including farm coordinates and supported crops
 
 # Sample Input
 **Plant Table**
