@@ -12,11 +12,11 @@ There will be 2 text files:
 # Sample Input
 **Plant Table**
 
-     ID | Latitude | Longitude | Farm_Name
-        ---|----------|-----------|---
-    1231 | 38.513253 | -90.145310 | 
-    1232 | 38.512092 | -90.143185 | 
-    1233 | 38.516561 | -90.138432 |
+     ID | Latitude | Longitude | crop | Farm_Name
+        ---|----------|-----------|----------- | ---
+    1231 | 38.513253 | -90.145310 | corn | 
+    1232 | 38.512092 | -90.143185 | soy | 
+    1233 | 38.516561 | -90.138432 | wheat |
 
 **Farm Table**
  
