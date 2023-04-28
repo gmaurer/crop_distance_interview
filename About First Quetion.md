@@ -13,7 +13,7 @@ There will be 2 text files:
 **Plant Table**
 
      Latitude | Longitude | crop 
-     ---|----------|-----------|----------- 
+     ---|----------|-----------|
      38.513253 | -90.145310 | corn 
      38.512092 | -90.143185 | soy 
      38.516561 | -90.138432 | wheat
@@ -21,7 +21,7 @@ There will be 2 text files:
 **Farm Table**
  
      Latitude | Longitude | crop 
-     ----------|-----------|----------- | ---
+     ----------|-----------|----------- |
      38.520671 | -90.157317 | corn
      38.520671 | -90.157317 | canola
      38.520671 | -90.157317 | wheat
@@ -33,6 +33,6 @@ There will be 2 text files:
 
 # Output Format
      Latitude | Longitude | Farm_Name
-     ---|----------|-----------|---
+     ---|----------|-----------|
      
 
